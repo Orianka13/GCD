@@ -52,16 +52,25 @@
                                     <constraint firstAttribute="height" constant="343" id="YGZ-xX-AVk"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wFm-5O-b84">
+                                <rect key="frame" x="197" y="249" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WR1-9Z-1Bw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="O6X-2C-qiO" firstAttribute="top" secondItem="WR1-9Z-1Bw" secondAttribute="top" id="55t-3E-vff"/>
+                            <constraint firstItem="wFm-5O-b84" firstAttribute="centerY" secondItem="O6X-2C-qiO" secondAttribute="centerY" id="TNU-xf-qms"/>
                             <constraint firstItem="O6X-2C-qiO" firstAttribute="width" secondItem="WR1-9Z-1Bw" secondAttribute="width" id="TeF-QD-Dnk"/>
+                            <constraint firstItem="wFm-5O-b84" firstAttribute="centerX" secondItem="O6X-2C-qiO" secondAttribute="centerX" id="mkW-cX-xwv"/>
                             <constraint firstItem="O6X-2C-qiO" firstAttribute="centerX" secondItem="WR1-9Z-1Bw" secondAttribute="centerX" id="vhU-F0-Rse"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ttc-9c-2iq"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="wFm-5O-b84" id="O5W-lM-BOH"/>
+                        <outlet property="imageView" destination="O6X-2C-qiO" id="wOL-B3-zNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJm-lh-c7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

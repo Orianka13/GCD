@@ -8,22 +8,39 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    fileprivate var imageURL: URL?
+    fileprivate var image: UIImage? {
+        get {
+            return imageView.image
+        }
+        set {
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            
+            imageView.image = newValue
+            imageView.sizeToFit()
+        }
+    }
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchImage()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    fileprivate func fetchImage(){
+        imageURL = URL(string: "https://eksmo.ru/upload/iblock/523/rick_morty_l_min.jpg")
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+        guard let url = imageURL, let imageData = try? Data(contentsOf: url) else { return }
+        self.image = UIImage(data: imageData)
     }
-    */
-
 }
